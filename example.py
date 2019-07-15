@@ -5,8 +5,12 @@ import json
 # Using these calls to test with: https://docs.postman-echo.com/?version=latest
 # Requests homepage: https://2.python-requests.org/en/master/
 
-header = {"Content-Type": "application/json"}
 token = None
+
+header = {
+        "Content-Type": "application/json",
+        "Authorization" : "Bearer " + token,
+    }
 
 def PrintJson( jsontext ):
     parsed = json.loads( jsontext )
@@ -14,6 +18,7 @@ def PrintJson( jsontext ):
 
 
 def Authenticate( header ):
+    header = { "Content-Type": "application/json" }
     url = ""
     body = {
     }
